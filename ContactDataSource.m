@@ -9,7 +9,8 @@
 #import "ContactDataSource.h"
 #import "sipiosManager.h"
 #import "SipContact-Swift.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
+#import "SipContact-Swift.h"
 
 @implementation ContactDataSource
 {
@@ -108,7 +109,7 @@
     //auto hangupViewController = [[HangupViewController alloc] initWithNibName:nil bundle:nil];
     //[chat callingTo:sender call:scall];
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate presentViewControllerFromVisibleViewController:chat];
+    //[delegate presentViewControllerFromVisibleViewController:chat];
     
 }
 

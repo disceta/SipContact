@@ -7,26 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D1260DDE1CA05A4A00DBCCB2 /* HangupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1260DDC1CA05A4A00DBCCB2 /* HangupViewController.m */; };
-		D1260DDF1CA05A4A00DBCCB2 /* HangupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1260DDD1CA05A4A00DBCCB2 /* HangupViewController.xib */; };
-		D1260DE21CA14F7C00DBCCB2 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1260DE11CA14F7C00DBCCB2 /* HistoryViewController.m */; };
-		D127E76A1CA3E94900E343AB /* ContactDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D127E7691CA3E94900E343AB /* ContactDataSource.m */; };
-		D1357BB31CB4EC1500DA291D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BB21CB4EC1500DA291D /* ChatViewController.swift */; };
-		D1357BB41CB4EC1500DA291D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BB21CB4EC1500DA291D /* ChatViewController.swift */; };
-		D1357BBE1CB4EE3200DA291D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BBC1CB4EE3200DA291D /* User.swift */; };
-		D1357BBF1CB4EE3200DA291D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BBC1CB4EE3200DA291D /* User.swift */; };
-		D1357BC01CB4EE3200DA291D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BBD1CB4EE3200DA291D /* Message.swift */; };
-		D1357BC11CB4EE3200DA291D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BBD1CB4EE3200DA291D /* Message.swift */; };
-		D1357BC41CB4EF1100DA291D /* MessageBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BC21CB4EF1100DA291D /* MessageBubbleTableViewCell.swift */; };
-		D1357BC51CB4EF1100DA291D /* MessageBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BC21CB4EF1100DA291D /* MessageBubbleTableViewCell.swift */; };
-		D1357BC61CB4EF1100DA291D /* MessageSentDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BC31CB4EF1100DA291D /* MessageSentDateTableViewCell.swift */; };
-		D1357BC71CB4EF1100DA291D /* MessageSentDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BC31CB4EF1100DA291D /* MessageSentDateTableViewCell.swift */; };
-		D1357BD31CB5422F00DA291D /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BD21CB5422F00DA291D /* Chat.swift */; };
-		D1357BD41CB5422F00DA291D /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BD21CB5422F00DA291D /* Chat.swift */; };
-		D1357BD71CB5519100DA291D /* MessageIncoming.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D1357BD51CB5519100DA291D /* MessageIncoming.aiff */; };
-		D1357BD81CB5519100DA291D /* MessageIncoming.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D1357BD51CB5519100DA291D /* MessageIncoming.aiff */; };
-		D1357BD91CB5519100DA291D /* MessageOutgoing.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D1357BD61CB5519100DA291D /* MessageOutgoing.aiff */; };
-		D1357BDA1CB5519100DA291D /* MessageOutgoing.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D1357BD61CB5519100DA291D /* MessageOutgoing.aiff */; };
+		D1357C031CB790BC00DA291D /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357BDD1CB790BC00DA291D /* AnswerViewController.m */; };
+		D1357C041CB790BC00DA291D /* AnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1357BDE1CB790BC00DA291D /* AnswerViewController.xib */; };
+		D1357C061CB790BC00DA291D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BE11CB790BC00DA291D /* AppDelegate.swift */; };
+		D1357C071CB790BC00DA291D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1357BE21CB790BC00DA291D /* Assets.xcassets */; };
+		D1357C081CB790BC00DA291D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1357BE31CB790BC00DA291D /* LaunchScreen.storyboard */; };
+		D1357C091CB790BC00DA291D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1357BE51CB790BC00DA291D /* Main.storyboard */; };
+		D1357C0A1CB790BC00DA291D /* BoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1357BE71CB790BC00DA291D /* BoardView.xib */; };
+		D1357C0D1CB790BC00DA291D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357BEB1CB790BC00DA291D /* ContactsViewController.m */; };
+		D1357C0E1CB790BC00DA291D /* HangupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357BED1CB790BC00DA291D /* HangupViewController.m */; };
+		D1357C0F1CB790BC00DA291D /* HangupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1357BEE1CB790BC00DA291D /* HangupViewController.xib */; };
+		D1357C101CB790BC00DA291D /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357BF01CB790BC00DA291D /* HistoryViewController.m */; };
+		D1357C111CB790BC00DA291D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1357BF11CB790BC00DA291D /* Info.plist */; };
+		D1357C121CB790BC00DA291D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357BF21CB790BC00DA291D /* main.m */; };
+		D1357C131CB790BC00DA291D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BF31CB790BC00DA291D /* Message.swift */; };
+		D1357C141CB790BC00DA291D /* MessageBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BF41CB790BC00DA291D /* MessageBubbleTableViewCell.swift */; };
+		D1357C151CB790BC00DA291D /* MessageIncoming.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D1357BF51CB790BC00DA291D /* MessageIncoming.aiff */; };
+		D1357C161CB790BC00DA291D /* MessageOutgoing.aiff in Resources */ = {isa = PBXBuildFile; fileRef = D1357BF61CB790BC00DA291D /* MessageOutgoing.aiff */; };
+		D1357C171CB790BC00DA291D /* MessageSentDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357BF71CB790BC00DA291D /* MessageSentDateTableViewCell.swift */; };
+		D1357C181CB790BC00DA291D /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357BF91CB790BC00DA291D /* PhoneViewController.m */; };
+		D1357C191CB790BC00DA291D /* pjsua_proxy.c in Sources */ = {isa = PBXBuildFile; fileRef = D1357BFA1CB790BC00DA291D /* pjsua_proxy.c */; };
+		D1357C1A1CB790BC00DA291D /* sipios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1357BFE1CB790BC00DA291D /* sipios.cpp */; };
+		D1357C1B1CB790BC00DA291D /* sipiosManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1357C011CB790BC00DA291D /* sipiosManager.mm */; };
+		D1357C1C1CB790BC00DA291D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C021CB790BC00DA291D /* User.swift */; };
+		D1357C1F1CB7919D00DA291D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C1E1CB7919D00DA291D /* WelcomeViewController.swift */; };
+		D1357C251CB7929C00DA291D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C211CB7929C00DA291D /* SearchViewController.swift */; };
+		D1357C261CB7929C00DA291D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C221CB7929C00DA291D /* SettingsTableViewController.swift */; };
+		D1357C271CB7929C00DA291D /* ChatViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C231CB7929C00DA291D /* ChatViewController copy.swift */; };
+		D1357C281CB7929C00DA291D /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C241CB7929C00DA291D /* UserCollectionViewCell.swift */; };
+		D1357C2A1CB792DA00DA291D /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C291CB792DA00DA291D /* ChatsTableViewController.swift */; };
+		D1357C2D1CB7942200DA291D /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C2C1CB7942200DA291D /* Chat.swift */; };
+		D1357C311CB7B52600DA291D /* UsersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C301CB7B52600DA291D /* UsersCollectionViewController.swift */; };
+		D1357C331CB7B56400DA291D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C321CB7B56400DA291D /* Account.swift */; };
+		D1357C351CB7BA4D00DA291D /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C341CB7BA4D00DA291D /* ChatTableViewCell.swift */; };
+		D1357C3B1CB7BB3700DA291D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D1357C381CB7BB3700DA291D /* .gitignore */; };
+		D1357C3C1CB7BB3700DA291D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D1357C391CB7BB3700DA291D /* README.md */; };
+		D1357C3D1CB7BB3700DA291D /* UIButtonBackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C3A1CB7BB3700DA291D /* UIButtonBackgroundColor.swift */; };
+		D1357C3F1CB7BCFA00DA291D /* UserPictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1357C3E1CB7BCFA00DA291D /* UserPictureImageView.swift */; };
+		D1357C421CB7BD3500DA291D /* ContactDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D1357C411CB7BD3500DA291D /* ContactDataSource.m */; };
 		D18664DA1CA49CD30002BAFC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D186648C1CA49ADA0002BAFC /* AVFoundation.framework */; };
 		D18664EE1CA49CD30002BAFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18664A01CA49ADA0002BAFC /* CoreGraphics.framework */; };
 		D18664EF1CA49CD30002BAFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D18664A11CA49ADA0002BAFC /* Foundation.framework */; };
@@ -74,36 +92,6 @@
 		D1995E541CA5363F00AA184F /* libpj-armv7-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1995DFE1CA5361C00AA184F /* libpj-armv7-apple-darwin_ios.a */; };
 		D1995E551CA5363F00AA184F /* libpjsdp-armv7-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1995DFF1CA5361C00AA184F /* libpjsdp-armv7-apple-darwin_ios.a */; };
 		D1995E561CA5363F00AA184F /* Pods_SipContact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711E9228B357C211D5314AEC /* Pods_SipContact.framework */; };
-		D1995E6A1CA5396200AA184F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2FA621CA2B0190013A081 /* LoginViewController.m */; };
-		D1995E6B1CA5396D00AA184F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD01C999C7C0046FF46 /* main.m */; };
-		D1995E6C1CA5398700AA184F /* HangupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1260DDC1CA05A4A00DBCCB2 /* HangupViewController.m */; };
-		D1995E6D1CA5398700AA184F /* sipios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFD6B1C99BDA10046FF46 /* sipios.cpp */; };
-		D1995E6E1CA5398700AA184F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD31C999C7C0046FF46 /* AppDelegate.mm */; };
-		D1995E6F1CA5398700AA184F /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD61C999C7C0046FF46 /* PhoneViewController.m */; };
-		D1995E701CA5398700AA184F /* ContactDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D127E7691CA3E94900E343AB /* ContactDataSource.m */; };
-		D1995E711CA5398700AA184F /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1260DE11CA14F7C00DBCCB2 /* HistoryViewController.m */; };
-		D1995E721CA5398700AA184F /* sipiosManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFD6F1C9BE6660046FF46 /* sipiosManager.mm */; };
-		D1995E731CA53A0400AA184F /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD91C999C7C0046FF46 /* ContactsViewController.m */; };
-		D1995E741CA53A2500AA184F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D2FA631CA2B0190013A081 /* LoginViewController.xib */; };
-		D1995E761CA53A2500AA184F /* HangupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1260DDD1CA05A4A00DBCCB2 /* HangupViewController.xib */; };
-		D1995E771CA53A2500AA184F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FBFCDB1C999C7C0046FF46 /* Main.storyboard */; };
-		D1995E781CA53A2500AA184F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FBFCE01C999C7C0046FF46 /* LaunchScreen.storyboard */; };
-		D1995E791CA53A3000AA184F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FBFCDE1C999C7C0046FF46 /* Assets.xcassets */; };
-		D1995E841CA983F400AA184F /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1995E821CA983F400AA184F /* AnswerViewController.m */; };
-		D1995E851CA983F400AA184F /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1995E821CA983F400AA184F /* AnswerViewController.m */; };
-		D1995E861CA983F400AA184F /* AnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1995E831CA983F400AA184F /* AnswerViewController.xib */; };
-		D1995E871CA983F400AA184F /* AnswerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1995E831CA983F400AA184F /* AnswerViewController.xib */; };
-		D1D2FA641CA2B0190013A081 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2FA621CA2B0190013A081 /* LoginViewController.m */; };
-		D1D2FA651CA2B0190013A081 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1D2FA631CA2B0190013A081 /* LoginViewController.xib */; };
-		D1FBFCD11C999C7C0046FF46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD01C999C7C0046FF46 /* main.m */; };
-		D1FBFCD41C999C7C0046FF46 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD31C999C7C0046FF46 /* AppDelegate.mm */; };
-		D1FBFCD71C999C7C0046FF46 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD61C999C7C0046FF46 /* PhoneViewController.m */; };
-		D1FBFCDA1C999C7C0046FF46 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFCD91C999C7C0046FF46 /* ContactsViewController.m */; };
-		D1FBFCDD1C999C7C0046FF46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FBFCDB1C999C7C0046FF46 /* Main.storyboard */; };
-		D1FBFCDF1C999C7C0046FF46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1FBFCDE1C999C7C0046FF46 /* Assets.xcassets */; };
-		D1FBFCE21C999C7C0046FF46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1FBFCE01C999C7C0046FF46 /* LaunchScreen.storyboard */; };
-		D1FBFD6D1C99BDA10046FF46 /* sipios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFD6B1C99BDA10046FF46 /* sipios.cpp */; };
-		D1FBFD701C9BE6660046FF46 /* sipiosManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1FBFD6F1C9BE6660046FF46 /* sipiosManager.mm */; };
 		DAC61F84514082D70DBA2FAA /* Pods_SipContact.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711E9228B357C211D5314AEC /* Pods_SipContact.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,23 +99,55 @@
 		2290036E378CBFFF06A2A7A5 /* Pods-SipContact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SipContact.release.xcconfig"; path = "Pods/Target Support Files/Pods-SipContact/Pods-SipContact.release.xcconfig"; sourceTree = "<group>"; };
 		711E9228B357C211D5314AEC /* Pods_SipContact.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SipContact.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D4B7B6C3FF447671626583D /* Pods-SipContact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SipContact.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SipContact/Pods-SipContact.debug.xcconfig"; sourceTree = "<group>"; };
-		D1260DDB1CA05A4A00DBCCB2 /* HangupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangupViewController.h; sourceTree = "<group>"; };
-		D1260DDC1CA05A4A00DBCCB2 /* HangupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangupViewController.m; sourceTree = "<group>"; };
-		D1260DDD1CA05A4A00DBCCB2 /* HangupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HangupViewController.xib; sourceTree = "<group>"; };
-		D1260DE01CA14F7C00DBCCB2 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
-		D1260DE11CA14F7C00DBCCB2 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
-		D127E7681CA3E94900E343AB /* ContactDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactDataSource.h; path = ../ContactDataSource.h; sourceTree = "<group>"; };
-		D127E7691CA3E94900E343AB /* ContactDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactDataSource.m; path = ../ContactDataSource.m; sourceTree = "<group>"; };
-		D1357BB01CB4EC1500DA291D /* SipContact-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SipContact-Bridging-Header.h"; sourceTree = "<group>"; };
-		D1357BB11CB4EC1500DA291D /* SipContact@-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SipContact@-Bridging-Header.h"; sourceTree = "<group>"; };
-		D1357BB21CB4EC1500DA291D /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		D1357BBC1CB4EE3200DA291D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D1357BBD1CB4EE3200DA291D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		D1357BC21CB4EF1100DA291D /* MessageBubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleTableViewCell.swift; sourceTree = "<group>"; };
-		D1357BC31CB4EF1100DA291D /* MessageSentDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSentDateTableViewCell.swift; sourceTree = "<group>"; };
-		D1357BD21CB5422F00DA291D /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		D1357BD51CB5519100DA291D /* MessageIncoming.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MessageIncoming.aiff; sourceTree = "<group>"; };
-		D1357BD61CB5519100DA291D /* MessageOutgoing.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MessageOutgoing.aiff; sourceTree = "<group>"; };
+		D1357BDC1CB790BC00DA291D /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
+		D1357BDD1CB790BC00DA291D /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		D1357BDE1CB790BC00DA291D /* AnswerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerViewController.xib; sourceTree = "<group>"; };
+		D1357BE11CB790BC00DA291D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D1357BE21CB790BC00DA291D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1357BE41CB790BC00DA291D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1357BE61CB790BC00DA291D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D1357BE71CB790BC00DA291D /* BoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BoardView.xib; sourceTree = "<group>"; };
+		D1357BEA1CB790BC00DA291D /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		D1357BEB1CB790BC00DA291D /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		D1357BEC1CB790BC00DA291D /* HangupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangupViewController.h; sourceTree = "<group>"; };
+		D1357BED1CB790BC00DA291D /* HangupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangupViewController.m; sourceTree = "<group>"; };
+		D1357BEE1CB790BC00DA291D /* HangupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HangupViewController.xib; sourceTree = "<group>"; };
+		D1357BEF1CB790BC00DA291D /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		D1357BF01CB790BC00DA291D /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		D1357BF11CB790BC00DA291D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1357BF21CB790BC00DA291D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D1357BF31CB790BC00DA291D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D1357BF41CB790BC00DA291D /* MessageBubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleTableViewCell.swift; sourceTree = "<group>"; };
+		D1357BF51CB790BC00DA291D /* MessageIncoming.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MessageIncoming.aiff; sourceTree = "<group>"; };
+		D1357BF61CB790BC00DA291D /* MessageOutgoing.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = MessageOutgoing.aiff; sourceTree = "<group>"; };
+		D1357BF71CB790BC00DA291D /* MessageSentDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSentDateTableViewCell.swift; sourceTree = "<group>"; };
+		D1357BF81CB790BC00DA291D /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
+		D1357BF91CB790BC00DA291D /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		D1357BFA1CB790BC00DA291D /* pjsua_proxy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pjsua_proxy.c; sourceTree = "<group>"; };
+		D1357BFB1CB790BC00DA291D /* pjsua_proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pjsua_proxy.h; sourceTree = "<group>"; };
+		D1357BFC1CB790BC00DA291D /* SipContact-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SipContact-Bridging-Header.h"; sourceTree = "<group>"; };
+		D1357BFD1CB790BC00DA291D /* SipContact@-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SipContact@-Bridging-Header.h"; sourceTree = "<group>"; };
+		D1357BFE1CB790BC00DA291D /* sipios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sipios.cpp; sourceTree = "<group>"; };
+		D1357BFF1CB790BC00DA291D /* sipios.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sipios.hpp; sourceTree = "<group>"; };
+		D1357C001CB790BC00DA291D /* sipiosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sipiosManager.h; sourceTree = "<group>"; };
+		D1357C011CB790BC00DA291D /* sipiosManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sipiosManager.mm; sourceTree = "<group>"; };
+		D1357C021CB790BC00DA291D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1357C1E1CB7919D00DA291D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D1357C211CB7929C00DA291D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D1357C221CB7929C00DA291D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D1357C231CB7929C00DA291D /* ChatViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChatViewController copy.swift"; sourceTree = "<group>"; };
+		D1357C241CB7929C00DA291D /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1357C291CB792DA00DA291D /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		D1357C2C1CB7942200DA291D /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		D1357C301CB7B52600DA291D /* UsersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewController.swift; sourceTree = "<group>"; };
+		D1357C321CB7B56400DA291D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		D1357C341CB7BA4D00DA291D /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		D1357C381CB7BB3700DA291D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D1357C391CB7BB3700DA291D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D1357C3A1CB7BB3700DA291D /* UIButtonBackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBackgroundColor.swift; sourceTree = "<group>"; };
+		D1357C3E1CB7BCFA00DA291D /* UserPictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPictureImageView.swift; sourceTree = "<group>"; };
+		D1357C401CB7BD3500DA291D /* ContactDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDataSource.h; sourceTree = SOURCE_ROOT; };
+		D1357C411CB7BD3500DA291D /* ContactDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDataSource.m; sourceTree = SOURCE_ROOT; };
 		D186648C1CA49ADA0002BAFC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		D18664A01CA49ADA0002BAFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		D18664A11CA49ADA0002BAFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -179,28 +199,7 @@
 		D1995DFD1CA5361C00AA184F /* libpjmedia-videodev-armv7-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjmedia-videodev-armv7-apple-darwin_ios.a"; path = "../../pjsip/pjproject-trunk/pjmedia/lib/libpjmedia-videodev-armv7-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		D1995DFE1CA5361C00AA184F /* libpj-armv7-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpj-armv7-apple-darwin_ios.a"; path = "../../pjsip/pjproject-trunk/pjlib/lib/libpj-armv7-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		D1995DFF1CA5361C00AA184F /* libpjsdp-armv7-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsdp-armv7-apple-darwin_ios.a"; path = "../../pjsip/pjproject-trunk/pjmedia/lib/libpjsdp-armv7-apple-darwin_ios.a"; sourceTree = "<group>"; };
-		D1995E811CA983F400AA184F /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
-		D1995E821CA983F400AA184F /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
-		D1995E831CA983F400AA184F /* AnswerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerViewController.xib; sourceTree = "<group>"; };
-		D1D2FA611CA2B0190013A081 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		D1D2FA621CA2B0190013A081 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		D1D2FA631CA2B0190013A081 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
 		D1FBFCCC1C999C7C0046FF46 /* SipContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SipContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1FBFCD01C999C7C0046FF46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D1FBFCD21C999C7C0046FF46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D1FBFCD31C999C7C0046FF46 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		D1FBFCD51C999C7C0046FF46 /* PhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
-		D1FBFCD61C999C7C0046FF46 /* PhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
-		D1FBFCD81C999C7C0046FF46 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		D1FBFCD91C999C7C0046FF46 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		D1FBFCDC1C999C7C0046FF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D1FBFCDE1C999C7C0046FF46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D1FBFCE11C999C7C0046FF46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D1FBFCE31C999C7C0046FF46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1FBFD6B1C99BDA10046FF46 /* sipios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sipios.cpp; sourceTree = "<group>"; };
-		D1FBFD6C1C99BDA10046FF46 /* sipios.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sipios.hpp; sourceTree = "<group>"; };
-		D1FBFD6E1C9BE6660046FF46 /* sipiosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sipiosManager.h; sourceTree = "<group>"; };
-		D1FBFD6F1C9BE6660046FF46 /* sipiosManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sipiosManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,19 +282,101 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D1357BB81CB4ECF300DA291D /* Chat */ = {
+		D1357BDB1CB790BC00DA291D /* SipContact */ = {
 			isa = PBXGroup;
 			children = (
-				D1357BD51CB5519100DA291D /* MessageIncoming.aiff */,
-				D1357BD61CB5519100DA291D /* MessageOutgoing.aiff */,
-				D1357BD21CB5422F00DA291D /* Chat.swift */,
-				D1357BC21CB4EF1100DA291D /* MessageBubbleTableViewCell.swift */,
-				D1357BC31CB4EF1100DA291D /* MessageSentDateTableViewCell.swift */,
-				D1357BBC1CB4EE3200DA291D /* User.swift */,
-				D1357BBD1CB4EE3200DA291D /* Message.swift */,
-				D1357BB21CB4EC1500DA291D /* ChatViewController.swift */,
+				D1357C401CB7BD3500DA291D /* ContactDataSource.h */,
+				D1357C411CB7BD3500DA291D /* ContactDataSource.m */,
+				D1357C2B1CB7940700DA291D /* Classes */,
+				D1357BE11CB790BC00DA291D /* AppDelegate.swift */,
+				D1357C201CB7925300DA291D /* Views */,
+				D1357C361CB7BAAA00DA291D /* Libraries */,
+				D1357BDC1CB790BC00DA291D /* AnswerViewController.h */,
+				D1357BDD1CB790BC00DA291D /* AnswerViewController.m */,
+				D1357BDE1CB790BC00DA291D /* AnswerViewController.xib */,
+				D1357BE21CB790BC00DA291D /* Assets.xcassets */,
+				D1357BE31CB790BC00DA291D /* LaunchScreen.storyboard */,
+				D1357BE51CB790BC00DA291D /* Main.storyboard */,
+				D1357BE71CB790BC00DA291D /* BoardView.xib */,
+				D1357BEA1CB790BC00DA291D /* ContactsViewController.h */,
+				D1357BEB1CB790BC00DA291D /* ContactsViewController.m */,
+				D1357BEC1CB790BC00DA291D /* HangupViewController.h */,
+				D1357BED1CB790BC00DA291D /* HangupViewController.m */,
+				D1357BEE1CB790BC00DA291D /* HangupViewController.xib */,
+				D1357BEF1CB790BC00DA291D /* HistoryViewController.h */,
+				D1357BF01CB790BC00DA291D /* HistoryViewController.m */,
+				D1357BF11CB790BC00DA291D /* Info.plist */,
+				D1357BF21CB790BC00DA291D /* main.m */,
+				D1357BF41CB790BC00DA291D /* MessageBubbleTableViewCell.swift */,
+				D1357BF51CB790BC00DA291D /* MessageIncoming.aiff */,
+				D1357BF61CB790BC00DA291D /* MessageOutgoing.aiff */,
+				D1357BF71CB790BC00DA291D /* MessageSentDateTableViewCell.swift */,
+				D1357BF81CB790BC00DA291D /* PhoneViewController.h */,
+				D1357BF91CB790BC00DA291D /* PhoneViewController.m */,
+				D1357BFA1CB790BC00DA291D /* pjsua_proxy.c */,
+				D1357BFB1CB790BC00DA291D /* pjsua_proxy.h */,
+				D1357BFC1CB790BC00DA291D /* SipContact-Bridging-Header.h */,
+				D1357BFD1CB790BC00DA291D /* SipContact@-Bridging-Header.h */,
+				D1357BFE1CB790BC00DA291D /* sipios.cpp */,
+				D1357BFF1CB790BC00DA291D /* sipios.hpp */,
+				D1357C001CB790BC00DA291D /* sipiosManager.h */,
+				D1357C011CB790BC00DA291D /* sipiosManager.mm */,
 			);
-			name = Chat;
+			path = SipContact;
+			sourceTree = "<group>";
+		};
+		D1357C1D1CB7914C00DA291D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D1357C1E1CB7919D00DA291D /* WelcomeViewController.swift */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		D1357C201CB7925300DA291D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1357C3E1CB7BCFA00DA291D /* UserPictureImageView.swift */,
+				D1357C341CB7BA4D00DA291D /* ChatTableViewCell.swift */,
+				D1357C301CB7B52600DA291D /* UsersCollectionViewController.swift */,
+				D1357C291CB792DA00DA291D /* ChatsTableViewController.swift */,
+				D1357C211CB7929C00DA291D /* SearchViewController.swift */,
+				D1357C221CB7929C00DA291D /* SettingsTableViewController.swift */,
+				D1357C231CB7929C00DA291D /* ChatViewController copy.swift */,
+				D1357C241CB7929C00DA291D /* UserCollectionViewCell.swift */,
+				D1357C1D1CB7914C00DA291D /* Welcome */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D1357C2B1CB7940700DA291D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D1357C321CB7B56400DA291D /* Account.swift */,
+				D1357BF31CB790BC00DA291D /* Message.swift */,
+				D1357C2C1CB7942200DA291D /* Chat.swift */,
+				D1357C021CB790BC00DA291D /* User.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D1357C361CB7BAAA00DA291D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D1357C371CB7BB3700DA291D /* UIButtonBackgroundColor */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		D1357C371CB7BB3700DA291D /* UIButtonBackgroundColor */ = {
+			isa = PBXGroup;
+			children = (
+				D1357C381CB7BB3700DA291D /* .gitignore */,
+				D1357C391CB7BB3700DA291D /* README.md */,
+				D1357C3A1CB7BB3700DA291D /* UIButtonBackgroundColor.swift */,
+			);
+			name = UIButtonBackgroundColor;
+			path = ../../Libraries/UIButtonBackgroundColor;
 			sourceTree = "<group>";
 		};
 		D1995E7A1CA53B0F00AA184F /* pjsip.local */ = {
@@ -350,21 +431,10 @@
 			name = pjsip.local;
 			sourceTree = "<group>";
 		};
-		D1995E801CA5808B00AA184F /* manager */ = {
-			isa = PBXGroup;
-			children = (
-				D1FBFD6B1C99BDA10046FF46 /* sipios.cpp */,
-				D1FBFD6C1C99BDA10046FF46 /* sipios.hpp */,
-				D1FBFD6E1C9BE6660046FF46 /* sipiosManager.h */,
-				D1FBFD6F1C9BE6660046FF46 /* sipiosManager.mm */,
-			);
-			name = manager;
-			sourceTree = "<group>";
-		};
 		D1FBFCC31C999C7C0046FF46 = {
 			isa = PBXGroup;
 			children = (
-				D1FBFCCE1C999C7C0046FF46 /* SipContact */,
+				D1357BDB1CB790BC00DA291D /* SipContact */,
 				D1FBFCCD1C999C7C0046FF46 /* Products */,
 				DC0A6C70AE856F7B02BC6386 /* Pods */,
 				B1FB20B380B422AE6281F325 /* Frameworks */,
@@ -378,49 +448,6 @@
 				D18664C01CA49CC20002BAFC /* SipContact@.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D1FBFCCE1C999C7C0046FF46 /* SipContact */ = {
-			isa = PBXGroup;
-			children = (
-				D1357BB81CB4ECF300DA291D /* Chat */,
-				D1995E801CA5808B00AA184F /* manager */,
-				D1D2FA611CA2B0190013A081 /* LoginViewController.h */,
-				D1D2FA621CA2B0190013A081 /* LoginViewController.m */,
-				D1D2FA631CA2B0190013A081 /* LoginViewController.xib */,
-				D1260DDB1CA05A4A00DBCCB2 /* HangupViewController.h */,
-				D1260DDC1CA05A4A00DBCCB2 /* HangupViewController.m */,
-				D1260DDD1CA05A4A00DBCCB2 /* HangupViewController.xib */,
-				D1FBFCD21C999C7C0046FF46 /* AppDelegate.h */,
-				D1FBFCD31C999C7C0046FF46 /* AppDelegate.mm */,
-				D1FBFCD51C999C7C0046FF46 /* PhoneViewController.h */,
-				D1FBFCD61C999C7C0046FF46 /* PhoneViewController.m */,
-				D1995E811CA983F400AA184F /* AnswerViewController.h */,
-				D1995E821CA983F400AA184F /* AnswerViewController.m */,
-				D1995E831CA983F400AA184F /* AnswerViewController.xib */,
-				D127E7681CA3E94900E343AB /* ContactDataSource.h */,
-				D127E7691CA3E94900E343AB /* ContactDataSource.m */,
-				D1FBFCD81C999C7C0046FF46 /* ContactsViewController.h */,
-				D1FBFCD91C999C7C0046FF46 /* ContactsViewController.m */,
-				D1FBFCDB1C999C7C0046FF46 /* Main.storyboard */,
-				D1260DE01CA14F7C00DBCCB2 /* HistoryViewController.h */,
-				D1260DE11CA14F7C00DBCCB2 /* HistoryViewController.m */,
-				D1FBFCDE1C999C7C0046FF46 /* Assets.xcassets */,
-				D1FBFCE01C999C7C0046FF46 /* LaunchScreen.storyboard */,
-				D1FBFCE31C999C7C0046FF46 /* Info.plist */,
-				D1FBFCCF1C999C7C0046FF46 /* Supporting Files */,
-				D1357BB01CB4EC1500DA291D /* SipContact-Bridging-Header.h */,
-				D1357BB11CB4EC1500DA291D /* SipContact@-Bridging-Header.h */,
-			);
-			path = SipContact;
-			sourceTree = "<group>";
-		};
-		D1FBFCCF1C999C7C0046FF46 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D1FBFCD01C999C7C0046FF46 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		DC0A6C70AE856F7B02BC6386 /* Pods */ = {
@@ -514,14 +541,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1995E791CA53A3000AA184F /* Assets.xcassets in Resources */,
-				D1357BDA1CB5519100DA291D /* MessageOutgoing.aiff in Resources */,
-				D1995E741CA53A2500AA184F /* LoginViewController.xib in Resources */,
-				D1995E761CA53A2500AA184F /* HangupViewController.xib in Resources */,
-				D1995E771CA53A2500AA184F /* Main.storyboard in Resources */,
-				D1357BD81CB5519100DA291D /* MessageIncoming.aiff in Resources */,
-				D1995E871CA983F400AA184F /* AnswerViewController.xib in Resources */,
-				D1995E781CA53A2500AA184F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,14 +548,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1FBFCE21C999C7C0046FF46 /* LaunchScreen.storyboard in Resources */,
-				D1357BD91CB5519100DA291D /* MessageOutgoing.aiff in Resources */,
-				D1D2FA651CA2B0190013A081 /* LoginViewController.xib in Resources */,
-				D1FBFCDF1C999C7C0046FF46 /* Assets.xcassets in Resources */,
-				D1260DDF1CA05A4A00DBCCB2 /* HangupViewController.xib in Resources */,
-				D1357BD71CB5519100DA291D /* MessageIncoming.aiff in Resources */,
-				D1995E861CA983F400AA184F /* AnswerViewController.xib in Resources */,
-				D1FBFCDD1C999C7C0046FF46 /* Main.storyboard in Resources */,
+				D1357C3B1CB7BB3700DA291D /* .gitignore in Resources */,
+				D1357C151CB790BC00DA291D /* MessageIncoming.aiff in Resources */,
+				D1357C0A1CB790BC00DA291D /* BoardView.xib in Resources */,
+				D1357C091CB790BC00DA291D /* Main.storyboard in Resources */,
+				D1357C071CB790BC00DA291D /* Assets.xcassets in Resources */,
+				D1357C161CB790BC00DA291D /* MessageOutgoing.aiff in Resources */,
+				D1357C111CB790BC00DA291D /* Info.plist in Resources */,
+				D1357C081CB790BC00DA291D /* LaunchScreen.storyboard in Resources */,
+				D1357C041CB790BC00DA291D /* AnswerViewController.xib in Resources */,
+				D1357C0F1CB790BC00DA291D /* HangupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,23 +616,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1995E731CA53A0400AA184F /* ContactsViewController.m in Sources */,
-				D1995E6C1CA5398700AA184F /* HangupViewController.m in Sources */,
-				D1357BD41CB5422F00DA291D /* Chat.swift in Sources */,
-				D1995E6D1CA5398700AA184F /* sipios.cpp in Sources */,
-				D1995E851CA983F400AA184F /* AnswerViewController.m in Sources */,
-				D1357BC51CB4EF1100DA291D /* MessageBubbleTableViewCell.swift in Sources */,
-				D1995E6E1CA5398700AA184F /* AppDelegate.mm in Sources */,
-				D1357BC71CB4EF1100DA291D /* MessageSentDateTableViewCell.swift in Sources */,
-				D1995E6F1CA5398700AA184F /* PhoneViewController.m in Sources */,
-				D1995E701CA5398700AA184F /* ContactDataSource.m in Sources */,
-				D1357BBF1CB4EE3200DA291D /* User.swift in Sources */,
-				D1995E711CA5398700AA184F /* HistoryViewController.m in Sources */,
-				D1357BB41CB4EC1500DA291D /* ChatViewController.swift in Sources */,
-				D1995E721CA5398700AA184F /* sipiosManager.mm in Sources */,
-				D1357BC11CB4EE3200DA291D /* Message.swift in Sources */,
-				D1995E6B1CA5396D00AA184F /* main.m in Sources */,
-				D1995E6A1CA5396200AA184F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,43 +623,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1FBFCDA1C999C7C0046FF46 /* ContactsViewController.m in Sources */,
-				D1260DDE1CA05A4A00DBCCB2 /* HangupViewController.m in Sources */,
-				D1357BD31CB5422F00DA291D /* Chat.swift in Sources */,
-				D1FBFCD41C999C7C0046FF46 /* AppDelegate.mm in Sources */,
-				D1995E841CA983F400AA184F /* AnswerViewController.m in Sources */,
-				D1357BC41CB4EF1100DA291D /* MessageBubbleTableViewCell.swift in Sources */,
-				D1260DE21CA14F7C00DBCCB2 /* HistoryViewController.m in Sources */,
-				D1357BC61CB4EF1100DA291D /* MessageSentDateTableViewCell.swift in Sources */,
-				D1FBFD701C9BE6660046FF46 /* sipiosManager.mm in Sources */,
-				D1D2FA641CA2B0190013A081 /* LoginViewController.m in Sources */,
-				D1357BBE1CB4EE3200DA291D /* User.swift in Sources */,
-				D1FBFCD71C999C7C0046FF46 /* PhoneViewController.m in Sources */,
-				D1357BB31CB4EC1500DA291D /* ChatViewController.swift in Sources */,
-				D127E76A1CA3E94900E343AB /* ContactDataSource.m in Sources */,
-				D1357BC01CB4EE3200DA291D /* Message.swift in Sources */,
-				D1FBFD6D1C99BDA10046FF46 /* sipios.cpp in Sources */,
-				D1FBFCD11C999C7C0046FF46 /* main.m in Sources */,
+				D1357C271CB7929C00DA291D /* ChatViewController copy.swift in Sources */,
+				D1357C121CB790BC00DA291D /* main.m in Sources */,
+				D1357C191CB790BC00DA291D /* pjsua_proxy.c in Sources */,
+				D1357C1F1CB7919D00DA291D /* WelcomeViewController.swift in Sources */,
+				D1357C0E1CB790BC00DA291D /* HangupViewController.m in Sources */,
+				D1357C261CB7929C00DA291D /* SettingsTableViewController.swift in Sources */,
+				D1357C281CB7929C00DA291D /* UserCollectionViewCell.swift in Sources */,
+				D1357C2A1CB792DA00DA291D /* ChatsTableViewController.swift in Sources */,
+				D1357C331CB7B56400DA291D /* Account.swift in Sources */,
+				D1357C3D1CB7BB3700DA291D /* UIButtonBackgroundColor.swift in Sources */,
+				D1357C3F1CB7BCFA00DA291D /* UserPictureImageView.swift in Sources */,
+				D1357C181CB790BC00DA291D /* PhoneViewController.m in Sources */,
+				D1357C101CB790BC00DA291D /* HistoryViewController.m in Sources */,
+				D1357C0D1CB790BC00DA291D /* ContactsViewController.m in Sources */,
+				D1357C3C1CB7BB3700DA291D /* README.md in Sources */,
+				D1357C251CB7929C00DA291D /* SearchViewController.swift in Sources */,
+				D1357C061CB790BC00DA291D /* AppDelegate.swift in Sources */,
+				D1357C1A1CB790BC00DA291D /* sipios.cpp in Sources */,
+				D1357C1B1CB790BC00DA291D /* sipiosManager.mm in Sources */,
+				D1357C171CB790BC00DA291D /* MessageSentDateTableViewCell.swift in Sources */,
+				D1357C2D1CB7942200DA291D /* Chat.swift in Sources */,
+				D1357C421CB7BD3500DA291D /* ContactDataSource.m in Sources */,
+				D1357C311CB7B52600DA291D /* UsersCollectionViewController.swift in Sources */,
+				D1357C141CB790BC00DA291D /* MessageBubbleTableViewCell.swift in Sources */,
+				D1357C1C1CB790BC00DA291D /* User.swift in Sources */,
+				D1357C351CB7BA4D00DA291D /* ChatTableViewCell.swift in Sources */,
+				D1357C131CB790BC00DA291D /* Message.swift in Sources */,
+				D1357C031CB790BC00DA291D /* AnswerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D1FBFCDB1C999C7C0046FF46 /* Main.storyboard */ = {
+		D1357BE31CB790BC00DA291D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D1FBFCDC1C999C7C0046FF46 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D1FBFCE01C999C7C0046FF46 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1FBFCE11C999C7C0046FF46 /* Base */,
+				D1357BE41CB790BC00DA291D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D1357BE51CB790BC00DA291D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1357BE61CB790BC00DA291D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
