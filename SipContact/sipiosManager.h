@@ -8,13 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "sipiosWrapper.h"
 
 
-
-@interface sipiosCallWrapper : NSObject {
-    
-}
-@end
 
 @interface sipiosManager : NSObject {
 }
