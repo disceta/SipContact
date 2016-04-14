@@ -7,20 +7,22 @@
 //
 
 #import "sipiosManager.h"
-#include "sipios.hpp"
-#import "HangupViewController.h"
-#import "AnswerViewController.h"
+//#import "HangupViewController.h"
+//#import "AnswerViewController.h"
 #include <string>
 #include <map>
 #include <vector>
-#import "AppDelegate.h"
+#include "sipios.hpp"
+#import "SipContact-Swift.h"
+#import "HangupViewController.h"
+#import "AnswerViewController.h"
 
-class sipiosCallDelegate;
-class sipiosBuddyDelegate;
+class sipiosCall;
+class sipiosBuddy;
 
-@implementation sipiosCall {
+@implementation sipiosCallWrapper {
 @public
-    std::shared_ptr<sipiosCallDelegate> _call;
+    std::shared_ptr<sipiosCall> _call;
 }
 
 @end
@@ -37,14 +39,15 @@ class sipiosBuddyDelegate;
 @implementation sipiosManager {
 }
 
+std::shared_ptr<AccountDelegate> account;
+//std::shared_ptr<CallDelegate> call;
+std::vector<std::shared_ptr<sipiosBuddy> > buddies;
+
 @synthesize someProperty;
-@synthesize contactsViewController;
+//@synthesize contactsViewController;
 
 #pragma mark Singleton Methods
 
-std::shared_ptr<AccountDelegate> account;
-std::shared_ptr<CallDelegate> call;
-std::vector<std::shared_ptr<sipiosBuddyDelegate> > buddies;
 
 + (id)sharedManager {
     static sipiosManager *sharedMyManager = nil;
@@ -58,6 +61,7 @@ std::vector<std::shared_ptr<sipiosBuddyDelegate> > buddies;
 - (id)init {
     if (self = [super init]) {
         someProperty = @"Default Property Value";
+        user_id = @"3";  //for test only
     }
     return self;
 }
@@ -70,8 +74,6 @@ std::vector<std::shared_ptr<sipiosBuddyDelegate> > buddies;
 // implement 
 
 -(void)start {
-    sipiosCall* call;
-    call->_call;
     /* Start pjsua app thread */
     [NSThread detachNewThreadSelector:@selector(pjsuaStart) toTarget:self withObject:nil];
 }
@@ -86,21 +88,21 @@ static void displayMsg(const char *msg)
 }
 
 
-class sipiosBuddyDelegate : public BuddyDelegate {
+class sipiosBuddy : public BuddyDelegate {
 public:
     
-    sipiosBuddyDelegate(std::shared_ptr<AccountDelegate> account) :
+    sipiosBuddy(std::shared_ptr<AccountDelegate> account) :
     BuddyDelegate(account) {
     }
     
     void onBuddyState(int state, const std::string& contact) {
         NSLog(@"buddy state event %d %s", state, contact.c_str());
-        std::vector<std::shared_ptr<sipiosBuddyDelegate> >::iterator i = buddies.begin(), e = buddies.end();
+        std::vector<std::shared_ptr<sipiosBuddy> >::iterator i = buddies.begin(), e = buddies.end();
         int k=0;
         for (;i!=e; ++i,++k) {
             if ((*i)->_contact == contact) {
                 sipiosManager* man = [sipiosManager sharedManager];
-                [[man contactsViewController] stateChange: state index:k];
+                //[[man changeBuddyState] stateChange: state index:k];
             };
         }
     };
@@ -113,25 +115,25 @@ public:
     NSString *pathres = [[NSBundle mainBundle] resourcePath];
     const char* uri= [pathres UTF8String];
     sipios_set_path_resource(uri);
-    account = std::shared_ptr<sipiosAccountDelegate>(new sipiosAccountDelegate());
+    account = std::shared_ptr<sipiosAccount>(new sipiosAccount());
     account->send_registration("sip", "rastel.dyndns-work.com", "2111", "qaz3");
     sipios_init();
     displayMsg("Created");
     return 0;
 }
 
-class sipiosCallDelegate: public CallDelegate {
+class sipiosCall: public CallDelegate {
     
 public:
     HangupViewController* hangupViewController;
 public:
     
-    sipiosCallDelegate(std::shared_ptr<AccountDelegate> account, int call_id = -1) : CallDelegate(account, call_id) {
-        NSLog(@"sipiosCallDelegate");
+    sipiosCall(std::shared_ptr<AccountDelegate> account, int call_id = -1) : CallDelegate(account, call_id) {
+        NSLog(@"sipiosCall");
     };
    
-    ~sipiosCallDelegate() {
-        NSLog(@"~sipiosCallDelegate");
+    ~sipiosCall() {
+        NSLog(@"~sipiosCall");
     }
     
     void onCallState(int state) {
@@ -154,25 +156,25 @@ public:
     }
     void onCallDuration(int duration) {
         NSString* text_duration=[NSString stringWithFormat:@"%02u:%02u:%02u", duration/3600, duration/60, duration%60];
-        dispatch_async(dispatch_get_main_queue(), ^{hangupViewController.timeLabel.text = text_duration;});
+        //dispatch_async(dispatch_get_main_queue(), ^{hangupViewController.timeLabel.text = text_duration;});
     }
     
         
 };
 
-class sipiosAccountDelegate: public AccountDelegate {
+class sipiosAccount: public AccountDelegate {
 public:
     
-    sipiosAccountDelegate() : AccountDelegate() {};
+    sipiosAccount() : AccountDelegate() {};
     
     void onRegister(int status) {
         NSLog(@"register status=%d", status);
     };
     
     void onIncomingCall(std::shared_ptr<CallDelegate>& delegate, int callId) {
-        auto ncall=std::shared_ptr<sipiosCallDelegate>(new sipiosCallDelegate(shared_from_this(), callId));
+        auto ncall=std::shared_ptr<sipiosCall>(new sipiosCall(shared_from_this(), callId));
         delegate = ncall;
-        sipiosCall* call = [[sipiosCall alloc] init];
+        sipiosCallWrapper* call = [[sipiosCallWrapper alloc] init];
         call->_call = ncall;
         dispatch_async(dispatch_get_main_queue(), ^ {
             NSString* sd = [[NSString alloc] initWithUTF8String:call->_call->get_aon().c_str()];
@@ -181,7 +183,10 @@ public:
             auto answerViewController = [[AnswerViewController alloc] initWithNibName:nil bundle:nil];
             [answerViewController callingTo:sd call:call];
             AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-            [delegate presentViewControllerFromVisibleViewController:answerViewController];
+            
+            UIViewController *vc = delegate.window.rootViewController;
+            [vc presentViewController:answerViewController animated:YES completion:nil];
+
        });
         
     };
@@ -201,10 +206,10 @@ public:
     displayMsg("OnCallClick");
     const char* uri = [sender UTF8String];
     auto hangupViewController = [[HangupViewController alloc] initWithNibName:nil bundle:nil];
-    auto call = std::shared_ptr<sipiosCallDelegate>(new sipiosCallDelegate(account));
+    auto call = std::shared_ptr<sipiosCall>(new sipiosCall(account));
     call->make_call(uri);
     call->hangupViewController = hangupViewController;
-    sipiosCall* scall = [[sipiosCall alloc] init];
+    sipiosCallWrapper* scall = [[sipiosCallWrapper alloc] init];
     scall->_call = call;
 
     [hangupViewController callingTo:sender call:scall];
@@ -220,21 +225,21 @@ public:
     account->hangup_all();
 }
 
--(void)hangup:(sipiosCall*)call {
+-(void)hangup:(sipiosCallWrapper*)call {
     call->_call->hangup();
 }
 
--(void)answer:(sipiosCall*)call {
+-(void)answer:(sipiosCallWrapper*)call {
     call->_call->answer();
-    auto hangupViewController = [[HangupViewController alloc] initWithNibName:nil bundle:nil];
-    call->_call->hangupViewController = hangupViewController;
-    [hangupViewController callingTo:@"from answer" call:call];
+    //auto hangupViewController = [[HangupViewController alloc] initWithNibName:nil bundle:nil];
+    //call->_call->hangupViewController = hangupViewController;
+    //[hangupViewController callingTo:@"from answer" call:call];
     AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    [delegate presentViewControllerFromVisibleViewController:hangupViewController];
+    //[delegate presentViewControllerFromVisibleViewController:hangupViewController];
 }
 
 -(void)subscribe:(NSString*)number {
-    auto buddy = std::shared_ptr<sipiosBuddyDelegate>(new sipiosBuddyDelegate(account));
+    auto buddy = std::shared_ptr<sipiosBuddy>(new sipiosBuddy(account));
     std::string sibscriber = [number UTF8String];
     buddy->subscribe(sibscriber);
     buddies.push_back(buddy);

@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "ContactsViewController.h"
 
-@interface sipiosCall : NSObject {
+
+
+@interface sipiosCallWrapper : NSObject {
     
 }
 @end
@@ -25,15 +26,15 @@
 -(void)call:(NSString*)uri fromView:(UIViewController*)view;
 
 -(void)hangup_all;
--(void)hangup:(sipiosCall*)call;
+-(void)hangup:(sipiosCallWrapper*)call;
 -(void)digit:(NSString*)digits;
--(void)answer:(sipiosCall*)call;
+-(void)answer:(sipiosCallWrapper*)call;
 -(void)subscribe:(NSString*)number;
 
 -(bool)contact_login:(NSString*)user_name :(NSString*)password completion:(void (^)(NSString *data, NSError *error))completionBlock;
 -(bool)contact_get_contacts:(void (^)(NSString *data, NSError *error))completionBlock;
 
-@property (strong, nonatomic) ContactsViewController* contactsViewController;
+//@property (strong, nonatomic) ContactsViewController* contactsViewController;
 
 
 @end
