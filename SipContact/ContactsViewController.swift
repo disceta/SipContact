@@ -96,6 +96,6 @@ class ContactsViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let user = account.users[indexPath.item]
-        //navigationController?.pushViewController(ProfileTableViewController(user: user), animated: true)
+        navigationController?.pushViewController(ChatViewController(chat: account.chats[0]), animated: true)
     }
 }

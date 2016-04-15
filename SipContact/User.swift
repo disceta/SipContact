@@ -5,6 +5,8 @@ class User : NSObject {
     var username: String
     dynamic var firstName: String
     dynamic var lastName: String
+    var chat: Chat?
+    
     var name: String {
         return firstName + " " + lastName
     }
@@ -24,6 +26,8 @@ class User : NSObject {
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
+        super.init()
+        chat = Chat(user: self, lastMessageText: "", lastMessageSentDate: NSDate())
     }
     
     func pictureName() -> String? {

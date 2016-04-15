@@ -11,6 +11,10 @@
 
 @interface sipiosAccountWrapper : NSObject
 
+-(void)registration:(NSString*)user :(NSString*)password;
+
+-(void)onRegister:(int)state;
+
 @end
 
 @interface sipiosCallWrapper : NSObject
@@ -26,5 +30,6 @@
 -(void)onCallState:(int)state;
 
 -(void)hangup;
+
 
 @end

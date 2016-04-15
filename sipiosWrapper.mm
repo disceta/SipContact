@@ -29,6 +29,7 @@ public:
     
     void onRegister(int status) {
         NSLog(@"register status=%d", status);
+        [_wrapper onRegister:status];
     };
     
     void onIncomingCall(call_api_ptr_t& delegate, int callId) {
@@ -66,6 +67,13 @@ public:
      }
     return self;
 }
+
+-(void) registration:(NSString*)user :(NSString*)password {
+    const char* usr = [user UTF8String];
+    const char* pass = [password UTF8String];
+    _api->send_registration("sip", "rastel.dyndns-work.com", usr, pass);
+}
+
 
 @end
 
