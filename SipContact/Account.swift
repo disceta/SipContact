@@ -70,6 +70,7 @@ class Account: sipiosAccountWrapper {
     var user: User!
         
     func continueAsGuest() {
+        return
         let minute: NSTimeInterval = 60, hour = minute * 60, day = hour * 24
         chats = [
             Chat(user: User(ID: 1, username: "mattdipasquale", firstName: "Matt", lastName: "Di Pasquale"), lastMessageText: "Thanks for checking out Chats! :-)", lastMessageSentDate: NSDate()),
@@ -105,7 +106,12 @@ class Account: sipiosAccountWrapper {
              //var users = (User)[]
              if let boardsDictionary = try NSJSONSerialization.JSONObjectWithData(json_data!, options: [NSJSONReadingOptions.MutableContainers]) as? Array<NSDictionary> {
                 let dictionary = boardsDictionary[0]
-                self.accessToken = dictionary["usr_id"] as! String
+                let usr_id = dictionary["usr_id"] as! String
+                if self.accessToken != usr_id {
+                    self.accessToken = usr_id
+                }
+                let id: UInt = UInt(usr_id)!
+                self.user = User(ID: id, username: self.username!, firstName: self.username!, lastName: "")
                 //self.user.serverFirstName = name["first"]!
                 //self.user.serverLastName = name["last"]!
                 //self.email = dictionary["email"]! as! String
@@ -127,6 +133,22 @@ class Account: sipiosAccountWrapper {
         NSLog("register coming state=%d", state);
     }
 
+    override func onInstantMessage(uri:String, _ msg:String) {
+        NSLog("message come %@ from %@", msg, uri)
+        let start_idx = uri.rangeOfString(":")?.startIndex
+        var suri = uri.substringFromIndex(start_idx!.advancedBy(1))
+        let end_idx = suri.rangeOfString("@")?.startIndex
+        suri = suri.substringToIndex(end_idx!)
+        
+        NSLog("uri = %@ ", suri)
+        if let found = users.indexOf({$0.username == suri}) {
+            let obj = users[found]
+            obj.chat.loadedMessages.append([Message(incoming: true, text: msg, sentDate:NSDate()) ])
+            NSNotificationCenter.defaultCenter().postNotificationName(chatReloadNotificationKey, object: obj.chat)
+            
+        }
+    }
+    
     func patchMe(viewController: UIViewController, firstName: String, lastName: String) -> NSURLSessionDataTask {
         return NSURLSessionDataTask()
     }

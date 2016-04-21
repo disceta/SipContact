@@ -58,6 +58,7 @@ public:
     virtual void onIncomingCall(call_api_ptr_t& call, int callId)=0;
     virtual void onIncomingSubscribe(const std::string& uri) = 0;
     virtual void onInstantMessage(const std::string& uri, const std::string& msg) = 0;
+    virtual void onInstantMessageStatus(int status) = 0;
 };
 
 class BuddyDelegate : public std::enable_shared_from_this<BuddyDelegate> {
@@ -70,6 +71,7 @@ public:
     BuddyDelegate(account_api_ptr_t account);
     void subscribe(const std::string& name);
     virtual void onBuddyState(int state, const std::string&) = 0;
+    void sendInstatMessage(const std::string&);
 };
 
 extern int sipios_init();

@@ -1,8 +1,5 @@
 //
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
-
-//#import "pjsua_proxy.h"
-
-#import "sipiosManager.h"
-#import "sipiosWrapper.h"
+  file is not use
+#include "sipiosManager.h"

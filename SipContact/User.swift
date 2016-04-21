@@ -1,11 +1,12 @@
 import Foundation.NSString
 
-class User : NSObject {
+class User : sipiosBuddyWrapper {
     let ID: UInt
     var username: String
     dynamic var firstName: String
     dynamic var lastName: String
-    var chat: Chat?
+    dynamic var presence: Int32
+    var chat: Chat!
     
     var name: String {
         return firstName + " " + lastName
@@ -13,9 +14,11 @@ class User : NSObject {
     var initials: String? {
         var initials: String?
         for name in [firstName, lastName] {
+            if name != "" {
             let initial = name.substringToIndex(name.startIndex.advancedBy(1))
             if initial.lengthOfBytesUsingEncoding(NSNEXTSTEPStringEncoding) > 0 {
                 initials = initials == nil ? initial : initials! + initial
+            }
             }
         }
         return initials
@@ -26,11 +29,22 @@ class User : NSObject {
         self.username = username
         self.firstName = firstName
         self.lastName = lastName
-        super.init()
+        self.presence = 0
+        super.init(account)
         chat = Chat(user: self, lastMessageText: "", lastMessageSentDate: NSDate())
     }
     
     func pictureName() -> String? {
-        return ID > 21 ? nil : "User\(ID).jpg"
+        return ID > 0 ? nil : "User\(ID).jpg"
+    }
+    
+    func subscribe() {
+        super.subscribe(username);
+    }
+    
+    override func onSubscribe(state:Int32) {
+        NSLog("subscribe comming %@ state=%d", username, state)
+        presence = state
+        NSNotificationCenter.defaultCenter().postNotificationName(changePresenceNotityKey, object: self)
     }
 }

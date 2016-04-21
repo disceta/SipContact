@@ -30,7 +30,7 @@ class ContactsViewController: UICollectionViewController {
     }
     
     func getUsers() -> NSURLSessionDataTask {
-        sipios_api.contact_get_contacts( { data, error in
+        sipios_api.contact_get_contacts("", { data, error in
             if error != nil {
                 return;
             }

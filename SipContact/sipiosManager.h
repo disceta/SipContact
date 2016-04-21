@@ -19,16 +19,9 @@
 
 + (id)sharedManager;
 - (void)start;
--(void)call:(NSString*)uri fromView:(UIViewController*)view;
-
--(void)hangup_all;
--(void)hangup:(sipiosCallWrapper*)call;
--(void)digit:(NSString*)digits;
--(void)answer:(sipiosCallWrapper*)call;
--(void)subscribe:(NSString*)number;
 
 -(bool)contact_login:(NSString*)user_name :(NSString*)password completion:(void (^)(NSString *data, NSError *error))completionBlock;
--(bool)contact_get_contacts:(void (^)(NSString *data, NSError *error))completionBlock;
+-(bool)contact_get_contacts:(NSString*)user_id :(void (^)(NSString *data, NSError *error))completionBlock;
 
 //@property (strong, nonatomic) ContactsViewController* contactsViewController;
 

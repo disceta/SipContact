@@ -119,17 +119,15 @@ class PhoneViewController: UITableViewController {
     
     var number: String = ""
     
-    /*required init?(coder aDecoder: NSCoder)
-    {
-        number = String("")
-        super.init(coder: aDecoder)
-    }*/
+    convenience init() {
+        self.init(style: .Plain)
+        title = "Phone"
+    }
 
     // MARK: - UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Phone"
         //navigationItem.leftBarButtonItem = editButtonItem() // TODO: KVO
         tableView.backgroundColor = .whiteColor()
         self.tableView.separatorColor = .clearColor();
@@ -213,6 +211,10 @@ class PhoneViewController: UITableViewController {
         if sender.tag == 12 {
             number = number + "#"
         }
+        else
+            if sender.tag == 11 {
+                number = number + "0"
+            }
         else
         if sender.tag == 99 {
             if number != "" {

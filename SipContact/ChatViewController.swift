@@ -1,6 +1,8 @@
 import AudioToolbox
 import UIKit
 
+let chatReloadNotificationKey = "chatReloadNotificationKey"
+
 class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
     static let chatMessageFontSize: CGFloat = 17
     private static let toolBarMinHeight: CGFloat = 44
@@ -8,6 +10,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private static let messageSoundOutgoing: SystemSoundID = {
         var soundID: SystemSoundID = 0
         let soundURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), "MessageOutgoing", "aiff", nil)
+        AudioServicesCreateSystemSoundID(soundURL, &soundID)
+        return soundID
+    }()
+
+    private static let messageSoundIncoming: SystemSoundID = {
+        var soundID: SystemSoundID = 0
+        let soundURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), "MessageIncoming", "aiff", nil)
         AudioServicesCreateSystemSoundID(soundURL, &soundID)
         return soundID
     }()
@@ -69,7 +78,9 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
         //title = chat.user.name
-    }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Call to", style: .Bordered, target: self, action: #selector(ChatViewController.callingTo))
+        
+  }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -103,7 +114,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         notificationCenter.addObserver(self, selector: #selector(ChatViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(ChatViewController.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(ChatViewController.menuControllerWillHide(_:)), name: UIMenuControllerWillHideMenuNotification, object: nil) // #CopyMessage
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.updateChatView(_:)), name: chatReloadNotificationKey, object: nil)
+       
         // tableViewScrollToBottomAnimated(false) // doesn't work
     }
     
@@ -267,6 +279,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Actions
     
+    func callingTo() {
+        let call = Call(account: account, call_id: -1);
+        call.callingTo(chat.user.username, view: self)
+
+    }
+
+    
     func sendMessageAction() {
         // Autocomplete text before sending #hack
         textView.resignFirstResponder()
@@ -279,12 +298,14 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         chat.lastMessageText = messageText
         chat.lastMessageSentDate = date
         //NSNotificationCenter.defaultCenter().postNotificationName(AccountDidSendMessageNotification, object: chat)
+        chat.user.sendInstantMessage(messageText)
         
         textView.text = nil
         updateTextViewHeight()
         sendButton.enabled = false
         
-        let lastSection = tableView.numberOfSections
+        
+        /*let lastSection = tableView.numberOfSections
         tableView.beginUpdates()
         tableView.insertSections(NSIndexSet(index: lastSection), withRowAnimation: .Automatic)
         tableView.insertRowsAtIndexPaths([
@@ -292,8 +313,16 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             NSIndexPath(forRow: 1, inSection: lastSection)
             ], withRowAnimation: .Automatic)
         tableView.endUpdates()
-        tableViewScrollToBottomAnimated(true)
+        */
+        //tableViewScrollToBottomAnimated(true)
+        updateTextViewHeight()
+        tableView.reloadData()
         AudioServicesPlaySystemSound(ChatViewController.messageSoundOutgoing)
+    }
+    
+    func updateChatView(notify: NSNotification) {
+        AudioServicesPlaySystemSound(ChatViewController.messageSoundIncoming)
+        tableView.reloadData()
     }
     
     // Handle actions #CopyMessage

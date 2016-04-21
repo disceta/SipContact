@@ -58,6 +58,7 @@
 pjsua_acc_id acc_id;
 pj_status_t status;
 bool isStarted=false;
+int tcp_enabled = PJSIP_TRANSPORT_TCP;
 
 
 using namespace pj;
@@ -82,7 +83,8 @@ enum sipiosEvent_t {
     evAnswer,
     evHangup,
     evHangupAll,
-    evBuddySubscribe
+    evBuddySubscribe,
+    evBuddyMessage
 } ;
 
 struct sipiosEvent {
@@ -90,6 +92,7 @@ struct sipiosEvent {
     std::shared_ptr<MyAccount> _account;
     std::shared_ptr<MyCall> _call;
     std::shared_ptr<MyBuddy> _buddy;
+    std::string _msg;
     
     sipiosEvent(sipiosEvent_t type, std::shared_ptr<MyCall> call) :
     _account(0), _call(call), _event_type(type)
@@ -109,6 +112,11 @@ struct sipiosEvent {
         
     }
 
+    sipiosEvent(sipiosEvent_t type, std::shared_ptr<MyBuddy> buddy, const std::string& msg) :
+    _buddy(buddy), _account(0), _call(0), _event_type(type), _msg(msg)
+    {
+        
+    }
 };
 
 struct sipiosQueue {
@@ -207,6 +215,10 @@ public:
         _proto = proto;
         _config->idUri = proto+":"+user+"@"+domain;
         _config->regConfig.registrarUri = proto+":"+domain;
+        if (tcp_enabled == PJSIP_TRANSPORT_TCP) {
+            _config->idUri+=";transport=tcp";
+            _config->regConfig.registrarUri += ";transport=tcp";
+        }
         _config->sipConfig.authCreds.push_back( AuthCredInfo("digest", "*", user, 0, password) );
         _config->callConfig.timerMinSESec=100;
         _config->callConfig.timerSessExpiresSec=110;
@@ -264,8 +276,13 @@ public:
         }
     }
     
-    void onInstantMessageStatus(OnInstantMessageStatusParam &prm)
-    { PJ_UNUSED_ARG(prm); }
+    void onInstantMessageStatus(OnInstantMessageStatusParam &prm) {
+        auto ptr = _delegate.lock();
+        if (ptr.get()) {
+            std::cout << "receive message status " << prm.code << std::endl;
+            ptr->onInstantMessageStatus(prm.code);
+        }
+    }
     
     void onTypingIndication(OnTypingIndicationParam &prm)
     { PJ_UNUSED_ARG(prm); }
@@ -390,8 +407,17 @@ void BuddyDelegate::subscribe(const std::string &name) {
     _contact = name;
     _buddy->_delegate = shared_from_this();
     _buddy->_uri = _buddy->_account->_proto+":"+name+"@"+_buddy->_account->_domain;
+    if (tcp_enabled == PJSIP_TRANSPORT_TCP) {
+        _buddy->_uri += ";transport=tcp";
+    }
     events.add(new sipiosEvent(evBuddySubscribe, _buddy, _buddy->_account));
 }
+
+void BuddyDelegate::sendInstatMessage(const std::string& msg) {
+    events.add(new sipiosEvent(evBuddyMessage, _buddy, msg));
+    
+}
+
 
 int pjsuaprx_start() {
     // Init library
@@ -402,7 +428,7 @@ int pjsuaprx_start() {
     
     // Transport
     tcfg.port = 15060;
-    ep.transportCreate(PJSIP_TRANSPORT_UDP, tcfg);
+    ep.transportCreate(PJSIP_TRANSPORT_TCP, tcfg);
     
     // Start library
     ep.libStart();
@@ -430,6 +456,8 @@ int pjsuaprx_start() {
                 string dest_uri="sip:";
                 dest_uri+=event->_call->_uri;
                 dest_uri+="@rastel.dyndns-work.com";
+                if (tcp_enabled == PJSIP_TRANSPORT_TCP)
+                    dest_uri+=";transport=tcp";
                 event->_call->makeCall(dest_uri, prm);
 
             }
@@ -453,6 +481,11 @@ int pjsuaprx_start() {
                 cfg.uri = event->_buddy->_uri;
                 event->_buddy->create(*event->_account.get(), cfg);
                 event->_buddy->subscribePresence(true);
+            }
+            else if (event->_event_type==evBuddyMessage) {
+                SendInstantMessageParam prm;
+                prm.content = event->_msg;
+                event->_buddy->sendInstantMessage(prm);
             }
             delete event;
 

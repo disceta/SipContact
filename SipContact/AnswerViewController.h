@@ -13,8 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 
-@property (strong, nonatomic) sipiosCall* parent_call;
+@property (strong, nonatomic) sipiosCallWrapper* parent_call;
 
--(void) callingTo:(NSString*)number call:(sipiosCall*)call;
+-(void) callingTo:(NSString*)number call:(sipiosCallWrapper*)call;
 
 @end

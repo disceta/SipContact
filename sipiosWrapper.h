@@ -15,6 +15,10 @@
 
 -(void)onRegister:(int)state;
 
+-(void)onInstantMessage:(NSString*)uri :(NSString*)msg;
+
+-(void)onInstantMessageStatus:(int)status;
+
 @end
 
 @interface sipiosCallWrapper : NSObject
@@ -33,3 +37,17 @@
 
 
 @end
+
+
+@interface sipiosBuddyWrapper : NSObject
+
+- (id)initWith:(sipiosAccountWrapper*)account_wrap;
+
+-(void)subscribe: (NSString*)contact;
+
+-(void)onSubscribe:(int)state;
+
+-(void)sendInstantMessage:(NSString*)msg;
+
+@end
+

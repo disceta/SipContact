@@ -1,11 +1,15 @@
 import UIKit
 
-let favoritTableViewCellHeight: CGFloat = 72
+let userPresenseNotificationKey = "userPresenseNotificationKey"
+
+
+let favoritTableViewCellHeight: CGFloat = 68
 let favoritTableViewCellInsetLeft = favoritTableViewCellHeight + 8
 
 class FavoritTableViewCell: UITableViewCell {
     let userPictureImageView: UserPictureImageView
     let userNameLabel: UILabel
+    let presenceLabel: UILabel
     let lastMessageTextLabel: UILabel
     let lastMessageSentDateLabel: UILabel
 
@@ -27,19 +31,33 @@ class FavoritTableViewCell: UITableViewCell {
         lastMessageSentDateLabel.backgroundColor = .whiteColor()
         lastMessageSentDateLabel.font = UIFont.systemFontOfSize(15)
         lastMessageSentDateLabel.textColor = lastMessageTextLabel.textColor
+        
+        presenceLabel = UILabel(frame: CGRectZero)
+        presenceLabel.textColor = .grayColor()
+        presenceLabel.font = UIFont.systemFontOfSize(34)
+        //presenceLabel.textAlignment = .Left
+        presenceLabel.text = "."
 
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(presenceLabel)
         contentView.addSubview(userPictureImageView)
         contentView.addSubview(userNameLabel)
         contentView.addSubview(lastMessageTextLabel)
         contentView.addSubview(lastMessageSentDateLabel)
+ 
 
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addConstraint(NSLayoutConstraint(item: userNameLabel, attribute: .Left, relatedBy: .Equal, toItem: contentView, attribute: .Left, multiplier: 1, constant: favoritTableViewCellInsetLeft))
         contentView.addConstraint(NSLayoutConstraint(item: userNameLabel, attribute: .Top, relatedBy: .Equal, toItem: contentView, attribute: .Top, multiplier: 1, constant: 6))
 
+
+        presenceLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addConstraint(NSLayoutConstraint(item: presenceLabel, attribute: .Left, relatedBy: .Equal, toItem: userNameLabel, attribute: .Left, multiplier: 1, constant: 0))
+        contentView.addConstraint(NSLayoutConstraint(item: presenceLabel, attribute: .Top, relatedBy: .Equal, toItem: contentView, attribute: .Top, multiplier: 1, constant: 6))
+        contentView.addConstraint(NSLayoutConstraint(item: presenceLabel, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 10))
+ 
         lastMessageTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addConstraint(NSLayoutConstraint(item: lastMessageTextLabel, attribute: .Left, relatedBy: .Equal, toItem: userNameLabel, attribute: .Left, multiplier: 1, constant: 0))
+        contentView.addConstraint(NSLayoutConstraint(item: lastMessageTextLabel, attribute: .Left, relatedBy: .Equal, toItem: presenceLabel, attribute: .Right, multiplier: 1, constant: 0))
         contentView.addConstraint(NSLayoutConstraint(item: lastMessageTextLabel, attribute: .Top, relatedBy: .Equal, toItem: contentView, attribute: .Top, multiplier: 1, constant: 28))
         contentView.addConstraint(NSLayoutConstraint(item: lastMessageTextLabel, attribute: .Right, relatedBy: .Equal, toItem: contentView, attribute: .Right, multiplier: 1, constant: -7))
         contentView.addConstraint(NSLayoutConstraint(item: lastMessageTextLabel, attribute: .Bottom, relatedBy: .LessThanOrEqual, toItem: contentView, attribute: .Bottom, multiplier: 1, constant: -4))
@@ -48,6 +66,8 @@ class FavoritTableViewCell: UITableViewCell {
         contentView.addConstraint(NSLayoutConstraint(item: lastMessageSentDateLabel, attribute: .Left, relatedBy: .Equal, toItem: userNameLabel, attribute: .Right, multiplier: 1, constant: 2))
         contentView.addConstraint(NSLayoutConstraint(item: lastMessageSentDateLabel, attribute: .Right, relatedBy: .Equal, toItem: contentView, attribute: .Right, multiplier: 1, constant: -7))
         contentView.addConstraint(NSLayoutConstraint(item: lastMessageSentDateLabel, attribute: .Baseline, relatedBy: .Equal, toItem: userNameLabel, attribute: .Baseline, multiplier: 1, constant: 0))
+        
+
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -57,7 +77,15 @@ class FavoritTableViewCell: UITableViewCell {
     func configureWithUser(user: User) {
         userPictureImageView.configureWithUser(user)
         userNameLabel.text = user.name
+        //presenceLabel.text = "."
+        if user.presence == 1 {
+            presenceLabel.textColor = .greenColor()
+        }
+        else {
+            presenceLabel.textColor = .redColor()
+        }
+        lastMessageTextLabel.text = user.username
         //lastMessageTextLabel.text = chat.lastMessageText
-        //lastMessageSentDateLabel.text = chat.lastMessageSentDateString
+        //lastMessageSentDateLabel.text = user.chat.lastMessageSentDateString
     }
 }

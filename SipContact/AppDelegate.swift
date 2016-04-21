@@ -9,13 +9,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        
+        account.accessToken = nil
         account.addObserver(self, forKeyPath: "accessToken", options: NSKeyValueObservingOptions(rawValue: 0), context: nil) // always
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.backgroundColor = .whiteColor()
         updateRootViewController()
         window!.makeKeyAndVisible()
-
+        account.issaved = false
+        
         return true
     }
 
@@ -29,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if account.accessToken == nil {
             window!.rootViewController = WelcomeViewController(nibName: nil, bundle: nil)
         } else {
+            account.registration()
             let tabBarController = createTabBarController()
             window!.rootViewController = tabBarController
             if account.accessToken == "guest_access_token" { return }
-            account.registration()
         }
     }
 

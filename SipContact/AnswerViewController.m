@@ -40,7 +40,7 @@
 }
 */
 
--(void) callingTo:(NSString*)number call:(sipiosCall*)call {
+-(void) callingTo:(NSString*)number call:(sipiosCallWrapper*)call {
     _number = number;
     parent_call = call;
 }
@@ -48,13 +48,13 @@
 - (IBAction)AnswerClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     [[UIDevice currentDevice] setProximityMonitoringEnabled:NO];
-    [[sipiosManager sharedManager] answer:parent_call];
+    //[[sipiosManager sharedManager] answer:parent_call];
     //[self BackClick:sender];
     
 }
 
 - (IBAction)BackClick:(id)sender {
-    [[sipiosManager sharedManager] hangup:parent_call];
+    //[[sipiosManager sharedManager] hangup:parent_call];
     [self dismissViewControllerAnimated:YES completion:nil];
     [[UIDevice currentDevice] setProximityMonitoringEnabled:NO];
 }

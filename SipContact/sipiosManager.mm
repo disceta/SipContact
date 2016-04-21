@@ -15,10 +15,7 @@
 class sipiosBuddy;
 
 @interface sipiosManager() {
-    NSString *user_id;
 }
-
-@property (nonatomic, retain) NSString *someProperty;
 
 
 @end
@@ -26,12 +23,6 @@ class sipiosBuddy;
 @implementation sipiosManager {
 }
 
-//std::shared_ptr<AccountDelegate> account;
-//std::shared_ptr<CallDelegate> call;
-std::vector<std::shared_ptr<sipiosBuddy> > buddies;
-
-@synthesize someProperty;
-//@synthesize contactsViewController;
 
 #pragma mark Singleton Methods
 
@@ -47,8 +38,6 @@ std::vector<std::shared_ptr<sipiosBuddy> > buddies;
 
 - (id)init {
     if (self = [super init]) {
-        someProperty = @"Default Property Value";
-        user_id = @"3";  //for test only
     }
     return self;
 }
@@ -75,27 +64,6 @@ static void displayMsg(const char *msg)
 }
 
 
-class sipiosBuddy : public BuddyDelegate {
-public:
-    
-    sipiosBuddy(std::shared_ptr<AccountDelegate> account) :
-    BuddyDelegate(account) {
-    }
-    
-    void onBuddyState(int state, const std::string& contact) {
-        NSLog(@"buddy state event %d %s", state, contact.c_str());
-        std::vector<std::shared_ptr<sipiosBuddy> >::iterator i = buddies.begin(), e = buddies.end();
-        int k=0;
-        for (;i!=e; ++i,++k) {
-            if ((*i)->_contact == contact) {
-                sipiosManager* man = [sipiosManager sharedManager];
-                //[[man changeBuddyState] stateChange: state index:k];
-            };
-        }
-    };
-    
-    
-};
 
 - (int)pjsuaStart
 {
@@ -113,49 +81,6 @@ public:
 
 
 
-- (void)call:(NSString*)sender fromView:(UIViewController*)view {
-    /*displayMsg("OnCallClick");
-    const char* uri = [sender UTF8String];
-    auto hangupViewController = [[HangupViewController alloc] initWithNibName:nil bundle:nil];
-    auto call = std::shared_ptr<sipiosCall>(new sipiosCall(account));
-    call->make_call(uri);
-    call->hangupViewController = hangupViewController;
-    sipiosCallWrapper* scall = [[sipiosCallWrapper alloc] init];
-    scall->_call = call;
-
-    [hangupViewController callingTo:sender call:scall];
-    [view presentViewController:hangupViewController animated:YES completion:NULL];
-     */
-}
-
--(void)digit: (NSString*) digits {
-    const char* uri= [digits UTF8String];
-    sipios_digit(uri);
-}
-
--(void)hangup_all {
-    //account->hangup_all();
-}
-
--(void)hangup:(sipiosCallWrapper*)call {
-    //call->_call->hangup();
-}
-
--(void)answer:(sipiosCallWrapper*)call {
-    /*call->_call->answer();
-    //auto hangupViewController = [[HangupViewController alloc] initWithNibName:nil bundle:nil];
-    //call->_call->hangupViewController = hangupViewController;
-    //[hangupViewController callingTo:@"from answer" call:call];
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    //[delegate presentViewControllerFromVisibleViewController:hangupViewController];*/
-}
-
--(void)subscribe:(NSString*)number {
-    /*auto buddy = std::shared_ptr<sipiosBuddy>(new sipiosBuddy(account));
-    std::string sibscriber = [number UTF8String];
-    buddy->subscribe(sibscriber);
-    buddies.push_back(buddy);*/
-}
 
 //****************
 //JSON request API
@@ -187,7 +112,6 @@ public:
 }
 
 -(bool)contact_login :(NSString*)user_name :(NSString*)password completion:(void (^)(NSString *data, NSError *error))completionBlock {
-    user_id = nil;
     NSString* command = [NSString stringWithFormat: @"{\"method\":\"getUser\", \"usr_name\": \"%@\", \"usr_pwd\": \"%@\"}", user_name, password];
     [self json_post_request:command completion:^(NSString *data, NSError *error2) {
         NSData* json_data = [data dataUsingEncoding:NSUTF8StringEncoding];
@@ -196,13 +120,13 @@ public:
         if (error3)
             NSLog(@"JSONObjectWithData error: %@", error3);
         NSMutableDictionary *obj0 = [array objectAtIndex:0];
-        user_id = [obj0 valueForKey:@"usr_id"];
+        //user_id = [obj0 valueForKey:@"usr_id"];
         completionBlock(data, error2);
     }];
     return true;
 }
 
--(bool)contact_get_contacts:(void (^)(NSString *data, NSError *error))completionBlock {
+-(bool)contact_get_contacts:(NSString*)user_id :(void (^)(NSString *data, NSError *error))completionBlock {
     NSString* command = [NSString stringWithFormat:@"{\"method\":\"getFavs\", \"usr_id\": \"%@\"}", user_id];
     
     [self json_post_request:command completion:completionBlock];
